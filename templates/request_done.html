@@ -17,26 +17,26 @@
                             <table class="table user-list">
                                 <thead class="thead-dark">
                                     <tr>
-                                        <th class="text-center"><span>Title</span></th>
-                                        <th class="text-center"><span>Username</span></th>
-                                        <th class="text-center"><span>Email</span></th>
-                                        <th colspan="2"><span>Action </span></th>
+                                        <th class="text-center"><span>Title project</span></th>
+                                        <th class="text-center"><span>Username user</span></th>
+                                        <th class="text-center"><span>Email user</span></th>
+                                        <th class="text-center"><span>State </span></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {% for request in requests %} 
                                     <tr>
-                                        <td>
+                                        <td class="text-center">
                                             <span class="user-subhead">{{request.titolo_progetto }}</span>
                                         </td>
-                                        <td>
+                                        <td class="text-center">
                                             <span class="user-subhead">{{request.username_mittente}}</span>
                                         </td>
-                                        <td>
+                                        <td class="text-center">
                                             <span class="user-subhead">{{request.email_mittente }}</span>
                                         </td>
 
-                                        <td>
+                                        <td class="text-center">
                                             {% if request.accepted== True %}
                                             <span class="user-subheadTrue">ACCETTATO</span>
                                             {% elif request.refused==True%}

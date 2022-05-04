@@ -170,7 +170,7 @@ def profile():
 
     
 #PERCORSO DI MODIFICA DEL TASK 
-@app.route('/<int:id_user>/modify', methods=['GET', 'POST'])
+@app.route('/<int:id_user>/edit_user', methods=['GET', 'POST'])
 @login_required #new line
 def edit_user(id_user):
     #Acquisizione dell'oggetto user
@@ -256,9 +256,9 @@ def create_project():
 
 
  #PERCORSO DI CREAZIONE DEL TASK
-@app.route('/show-yours-projects', methods=['GET', 'POST'])
+@app.route('/show-my-projects', methods=['GET', 'POST'])
 @login_required #new line
-def show_yours_projects():
+def show_my_projects():
      #Acquisizione dell'oggetto user
     user = current_user
     
@@ -522,7 +522,7 @@ def create_task(id_project):
             id =request.form.get('taskModify')
             
             #chiamata della route id
-            return redirect(url_for('edit_task', id_project= id_project, id_task= id))
+            return redirect(url_for('edit_tasks', id_project= id_project, id_task= id))
 
     
 
@@ -548,9 +548,9 @@ def create_task(id_project):
 
 
 #PERCORSO DI MODIFICA DEL TASK 
-@app.route('/<string:id_project>/<int:id_task>/edit', methods=['GET', 'POST'])
+@app.route('/<string:id_project>/<int:id_task>/edit_tasks', methods=['GET', 'POST'])
 @login_required #new line
-def edit(id_project,id_task):
+def edit_tasks(id_project,id_task):
     #Acquisizione dell'oggetto user
 
 
