@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block content %} 
+
+
+
+<div class="container mt-4">
+    <h2>List of requests done</h2>
+    <div class="main-w3layouts wrapper">
+       
+        <div class="main-agileinfo">
+ 
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="main-box clearfix">
+                        <div class="table-responsive">
+                            <table class="table user-list">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th class="text-center"><span>Title</span></th>
+                                        <th class="text-center"><span>Username</span></th>
+                                        <th class="text-center"><span>Email</span></th>
+                                        <th colspan="2"><span>Action </span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for request in requests %} 
+                                    <tr>
+                                        <td>
+                                            <span class="user-subhead">{{request.titolo_progetto }}</span>
+                                        </td>
+                                        <td>
+                                            <span class="user-subhead">{{request.username_mittente}}</span>
+                                        </td>
+                                        <td>
+                                            <span class="user-subhead">{{request.email_mittente }}</span>
+                                        </td>
+
+                                        <td>
+                                            {% if request.accepted== True %}
+                                            <span class="user-subheadTrue">ACCETTATO</span>
+                                            {% elif request.refused==True%}
+                                            <span class="user-subhead">rIFIUTATO</span>     
+                                            {% else %}
+                                            <span class="user-subhead">IN ATTESA</span>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+        {% endblock content%}

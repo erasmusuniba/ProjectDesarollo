@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <span class="navbar-text">Todoist</span>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+            {% if current_user.is_authenticated %}
+            <li class="nav-item active">
+              <a class="nav-link" href="{{url_for('profile')}}">Profile <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{{url_for('projects')}}"> Projects <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{{url_for('requests')}}">Requests of Projects <span class="sr-only">(current)</span></a>
+            </li>
+    
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+            </li>
+              
+            {% else  %}
+            <li class="nav-item active">
+                <a class="nav-link" href="{{url_for('login')}}">Login <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('register')}}">Register</a>s
+              </li>
+            {% endif %}
+            {% if current_user.is_admin== True %}
+
+            <li class="nav-item">
+              <a class="nav-link" href="/admin">Admin</a>
+            </li>
+            {% endif %}
+          </ul>
+      
+        </div>
+      </nav>

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %} 
+<div class="container mt-4"> 
+  <div class="main-w3layouts wrapper">
+    <h2>Action</h2>
+      <div class="main-agileinfo">
+          <div class="agileits-top">
+          <ul >
+            <li class="nav-item active">
+              <a class="nav-link" href="{{url_for('request_received')}}">Requests received <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{{url_for('request_done')}}">Requests effectuated <span class="sr-only">(current)</span></a>
+            </li>
+
+
+          </ul>
+
+
+        </div>
+      </div>
+      <!-- copyright -->
+      <!-- //copyright -->
+    </div>
+  </div>
+  
+  {% endblock content%}

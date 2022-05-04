@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+    <!-- main -->
+    {% block content %} 
+
+   <div class="container mt-4">
+    <div class="main-w3layouts wrapper">
+       
+        <div class="main-agileinfo">
+            <h2>Login now</h2>
+            <!-- Display login error message-->
+            {% if message %}
+            <div class="alert alert-warning" role="alert">
+                <span class="closebtns" onclick="this.parentElement.style.display='none';">&times;</span>Invalid username or password
+            </div>
+            {% endif %}
+            <div class="agileits-top">
+                <form action="/login" method="post" novalidate class="p-3 border border-2">
+                    {{ form.csrf_token}}                   
+                    <div class="form-group row">
+                        <label for="email" class="col-sm-2 col-form-label col-form-label-sm">Username</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control form-control-sm" id="email" name="email" placeholder="Email" required="">
+                        </div>
+                    </div> 
+                    {% for error in form.email.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                    <div class="form-group row">
+                        <label for="password" class="col-sm-2 col-form-label col-form-label-sm">Password</label>
+                        <div class="col-sm-10">
+                          <input type="password" class="form-control form-control-sm" id="password" name="password" placeholder="Password" required="">
+                        </div>
+                    </div> 
+                   
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                          <button type="submit" name= "submit"  class="btn btn-primary">Log In</button>
+                        </div>
+                      </div>
+                </form>
+                <p>Don't have an account? <a href="{{ url_for('register') }}"> Register Now!</a></p>
+            </div>
+        </div>
+    </div>
+    
+        <!-- copyright -->
+        <!-- //copyright -->
+
+    </div>
+
+    {% endblock content%}

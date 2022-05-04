@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %} 
+
+
+<div class="container mt-4">
+    <h2>Users lists</h2>
+    <div class="main-w3layouts wrapper">
+       
+        <div class="main-agileinfo">
+    <form action="" method="post">
+        {{ form.hidden_tag() }} <!-- csrf token for security -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="main-box clearfix">
+                        <div class="table-responsive">
+                            <table class="table user-list">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th class="text-center"><span>Username</span></th>
+                                        <th class="text-center"><span>Email</span></th>
+                                        <th class="text-center"><span>Action</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for user_item in users %} 
+                                    <tr>
+                                        <td class="text-center">
+                                            <span class="user-subhead">{{ user_item.username }}</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="user-subhead">{{ user_item.email }}</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button class="btn btn-success" type="submit" name="projectShare" type="submit" value="{{ user_item.id }}">  
+                                                Share
+                                            </button>       
+                                        </td>
+                                       
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </form>
+    </div>
+    </div>
+    </div>
+
+        {% endblock content%}

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %} 
+
+<div class="container mt-4"> 
+    <!-- main -->
+    <div class="main-w3layouts wrapper">
+      <h2>Register now</h2>
+        <div class="main-agileinfo">
+            <div class="agileits-top">
+                <form action="" method="post" novalidate class="p-3 border border-2">
+                    {{ form.hidden_tag() }}                    
+                    <div class="form-group row">
+                        <label for="username" class="col-sm-2 col-form-label col-form-label-sm">Username</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control form-control-sm" id="username" name="username" placeholder="Username" required="">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="email" class="col-sm-2 col-form-label col-form-label-sm">Email</label>
+                        <div class="col-sm-10">
+                          <input type="email" class="form-control form-control-sm"  id="email" name="email" placeholder="Email" required="">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="password" class="col-sm-2 col-form-label col-form-label-sm">Password</label>
+                        <div class="col-sm-10">
+                          <input type="password" class="form-control form-control-sm"  id="password" name="password" placeholder="Password" required="">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="password2" class="col-sm-2 col-form-label col-form-label-sm">Confirm password</label>
+                        <div class="col-sm-10">
+                          <input  type="password" class="form-control form-control-sm"   id="password2" name="password2" placeholder="Confirm Password" required="">
+                        </div>
+                      </div>
+                     
+                     <div class="wthree-text">
+                        <label class="anim">
+                            <input type="checkbox" class="checkbox" required="">
+                            <span>I Agree To The Terms & Conditions</span>
+                        </label>
+                        <div class="clear"> </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                          <button type="submit" name= "submit"  class="btn btn-primary">Sign up</button>
+                        </div>
+                      </div>
+                </form>
+                
+                <p>Do you have an acount? <a href="{{ url_for('login') }}"> Login Now!</a></p>
+            </div>
+        </div>
+        <!-- copyright -->
+        <!-- //copyright -->
+      </div>
+    </div>
+
+    {% endblock content%}

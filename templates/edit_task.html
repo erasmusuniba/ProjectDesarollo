@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %} 
+
+<div class="container mt-4"> 
+    <div class="main-w3layouts wrapper">
+        <div class="main-agileinfo">
+            <div class="agileits-top">
+                <form action="" method="post" novalidate class="p-3 border border-2">
+                    {{ form.hidden_tag() }} <!-- csrf token for security -->
+                    <div class="form-group row">
+                        <label for="title" class="col-sm-2 col-form-label col-form-label-sm">Title</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control form-control-sm" id="title" name="title" value ="{{todo.title}}" placeholder="Title" required="">
+                        </div>
+                      </div>
+                    <div class="form-group row">
+                        <label for="category" class="col-sm-2 col-form-label col-form-label-sm">Priority</label>
+                        <div class="col-sm-10">
+                            <select name="category" id="category"  value="{{todo.category}}">
+                                <option value="1">Alto</option>
+                                <option value="2">Medio</option>
+                                <option value="3">Basso</option>
+                            </select>
+                        </div>
+                      </div>
+                    <div class="form-group row">
+                        <label for="date" class="col-sm-2 col-form-label col-form-label-sm">Date</label>
+                        <div class="col-sm-10">
+                          <input  type="date"  class="form-control form-control-sm" value="{{todo.date}}"  name="date" id="date" required="">
+                        </div>
+                      </div>
+                    <div class="form-group row">
+                        <label for="time" class="col-sm-2 col-form-label col-form-label-sm">Time</label>
+                        <div class="col-sm-10">
+                          <input type="time" class="form-control form-control-sm"  value="{{todo.time}}" name="time" id="time" required="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                          <button type="submit" name= "taskModify"  class="btn btn-primary" value="{{ todo.id }}"> Modifica un task</button>
+                        </div>
+                      </div>
+                 
+                </form>
+
+            </div>
+        </div>
+        <!-- copyright -->
+        <!-- //copyright -->
+
+    </div>
+</div>
+
+
+    {% endblock content%}
+ 

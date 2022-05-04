@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %} 
+<div class="container mt-4">
+    <h2>List of requests received</h2>
+    <div class="main-w3layouts wrapper">
+       
+        <div class="main-agileinfo">
+ 
+
+    <form action="" method="post">
+        {{ form.hidden_tag() }} <!-- csrf token for security -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="main-box clearfix">
+                        <div class="table-responsive">
+                            <table class="table user-list">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th class="text-center"><span>Title</span></th>
+                                        <th class="text-center"><span>Username</span></th>
+                                        <th class="text-center"><span>Email</span></th>
+                                        <th colspan="2"><span>Action </span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for request in requests %} 
+                                    <tr>
+                                        <td>
+                                            <span class="user-subhead">{{request.titolo_progetto }}</span>
+                                        </td>
+                                        <td>
+                                            <span class="user-subhead">{{request.username_mittente}}</span>
+                                        </td>
+                                        <td>
+                                            <span class="user-subhead">{{request.email_mittente }}</span>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-warning " type="submit" name="acceptRequest" type="submit" value="{{request.id}}">  
+                                                ACCEPT
+                                            </button>       
+                                            <button class="btn btn-warning " type="submit" name="rejectRequest" type="submit" value="{{request.id }}">  
+                                                REJECT
+                                            </button>       
+                                        </td>
+                                       
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+        {% endblock content%}

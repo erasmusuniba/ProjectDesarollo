@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+<!-- main -->
+{% block content %} 
+
+<div class="container mt-4">
+  <h2>Other projects</h2>
+  <div class="main-w3layouts wrapper">
+     
+      <div class="main-agileinfo">
+      <form action="" method="post">
+                {{ form.hidden_tag() }} <!-- csrf token for security -->
+  
+                <div class="container">
+                    <div class="container">
+                        <div class="row row-cols-2">
+                            {% for project_item in projects %} 
+                                           
+                            <div class="card" style="width: 18rem;">
+                                <img src="{{  url_for('static',filename='profile_pics/'+ project_item.image) }}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">{{ project_item.title }}</h5>
+                                  <p class="card-text">{{ project_item.description }}</p>
+                                  <div class="card-body">
+                                    <button class="btn btn-success" name="requestTask" type="submit" value="{{ project_item.id }}">Requests Tasks</a>
+                                  </div>
+
+                                </div>
+                              </div>
+                    
+                          
+                            {% endfor %}
+                        </div>
+                      </div>
+
+</form>
+</div>
+</div>
+</div>
+
+{% endblock content%}
