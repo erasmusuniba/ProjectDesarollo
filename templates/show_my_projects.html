@@ -14,25 +14,33 @@
                     {{ form.hidden_tag() }} <!-- csrf token for security -->
       
                     <div class="container">
+
                         <div class="container">
+                        
                             <div class="row row-cols-2">
                                 {% for project_item in projects %} 
+                                <div style="visibility:hidden">ok</div>
                                                
-                                <div class="card" style="width: 18rem;">
+                                <div class="card" style="width: 18rem; margin-top: 25px;">
                                     <img src="{{  url_for('static',filename='profile_pics/'+ project_item.image) }}" class="card-img-top" alt="...">
                                     <div class="card-body">
                                       <h5 class="card-title">{{ project_item.title }}</h5>
                                       <p class="card-text">{{ project_item.description }}</p>
-                                        <button class="btn btn-warning"  name="showTask" type="submit" value="{{ project_item.id }}">Show Tasks</a>
-                                        <button class="btn btn-danger" name="shareTask" type="submit" value="{{ project_item.id }}" >Share Tasks</a>
+                                        <button class="btn btn-warning"  name="showTask" type="submit" value="{{ project_item.id }}">Show Tasks</button>
+                                        <button class="btn btn-danger" name="shareTask" type="submit" value="{{ project_item.id }}" >Share Tasks</button>
                                       
                                     </div>
+
                                   </div>
+                                  
+                                 
                         
                               
                                 {% endfor %}
                             </div>
                           </div>
+                          
+                        
     
     </form>
   </div>

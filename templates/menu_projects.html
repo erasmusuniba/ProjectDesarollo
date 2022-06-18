@@ -8,13 +8,13 @@
 
         <ul>
           <li class="nav-item active">
-            <a class="nav-link" href="{{url_for('create_project')}}">Create Project<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{{url_for('create_project', id_user= current_user.id)}}">Create Project<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="{{url_for('show_my_projects')}}">Show my projects  <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{{url_for('show_my_projects',id_user= current_user.id)}}">Show my projects  <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="{{url_for('show_others_projects')}}">Show other projects <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{{url_for('show_others_projects',id_user= current_user.id)}}">Show other projects <span class="sr-only">(current)</span></a>
           </li>
 
 

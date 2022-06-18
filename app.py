@@ -8,11 +8,6 @@ from flask import Flask, abort
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
 from flask_security import Security, SQLAlchemyUserDatastore, current_user
-"""
-Model - View - Controller
-- MODEL, memorizza i dati che vengono recuperati in base ai comandi del controller
-- VIEW, genera output per l'utente in base alle modifiche nel modello
-Il controller agisce sia sul modello che sulla vista ; invia comandi al modello per aggiornarne lo stato e alla vista per modificare le informazioni presentate agli utenti"""
 
 #Flask-Migrate è un'estensione basata su Alembic utilizzata per eseguire migrazioni di database quando si utilizza SQLAlchemy come ORM
 #Questa estensione rileva le modifiche apportate ai nostri modelli (nuovi modelli, nuovi campi,...) e genera script con i quali possiamo fsilmente effettuare aggiornamenti del database. 
