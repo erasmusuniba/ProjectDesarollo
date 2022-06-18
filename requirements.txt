@@ -63,8 +63,6 @@ pure-eval==0.2.2
 py==1.11.0
 pycparser==2.21
 pycryptodome==3.14.1
-pywin32==301
-platform_system == "Windows"
 Pygments==2.12.0
 pyOpenSSL==22.0.0
 pyparsing==3.0.7

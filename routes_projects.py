@@ -6,7 +6,6 @@ from form import TaskForm, ProjectForm
 from datetime import datetime
 from models import *
 from app import app
-from werkzeug.utils import secure_filename
 from flask_wtf import FlaskForm
 import uuid
 import os
